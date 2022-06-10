@@ -1,0 +1,41 @@
+.header {
+  background: var(--white-2);
+  height: 99vh;
+  position: relative;
+  z-index: 5;
+
+  &__content {
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &--title {
+      color: #fff;
+      font-size: 4.5rem;
+      width: 100%;
+      white-space: nowrap; // To prevent the text from wrapping
+
+      @include respond(normal-phone-fix) {
+        font-size: 3.5rem;
+      }
+    }
+
+    &--text {
+      color: #fff;
+      // font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  &__button {
+    margin-top: 4rem;
+
+    @include respond(small-phone) {
+      margin-top: 1rem;
+    }
+  }
+}

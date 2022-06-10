@@ -1,0 +1,155 @@
+.section-skills {
+  padding: 8rem 10rem 12rem 10rem;
+  background: linear-gradient(to right, rgba(#074955, 0.8), rgba(#c2233d, 0.8));
+  color: var(--white-2);
+}
+
+.skill {
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+
+    @include respond(normal-phone-fix) {
+      grid-template-columns: 1fr;
+    }
+    @include respond(small-phone-fix) {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  // PIE-CHART-DESIGN
+  &-pie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    @include respond(normal-phone-fix) {
+      flex-direction: row;
+      margin-bottom: 8rem;
+    }
+    @include respond(small-phone-fix) {
+      margin-bottom: 4rem;
+    }
+
+    &__circle {
+      height: 14rem;
+      width: 14rem;
+      // background: cornflowerblue; //To test
+      position: relative;
+
+      @include respond(small-phone-fix) {
+        height: 12rem;
+        width: 12rem;
+      }
+
+      &--outer {
+        height: 14rem;
+        width: 14rem;
+        // border: 1px solid red; // To test. INstead, we gonna use box-shadow */
+        border-radius: 50%;
+        padding: 2rem;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+          -3px -3px 10px -1px rgba(255, 255, 255, 0.7);
+
+        @include respond(small-phone-fix) {
+          height: 12rem;
+          width: 12rem;
+        }
+      }
+
+      &--inner {
+        height: 9.8rem;
+        width: 9.8rem;
+        // border: 1px solid red; // To test. INstead, we gonna use box-shadow */
+        border-radius: 50%;
+        box-shadow: inset 4px 4px 10px -1px rgba(0, 0, 0, 0.2),
+          inset -3px -3px 5px -1px rgba(255, 255, 255, 0.7);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include respond(small-phone-fix) {
+          height: 7.8rem;
+          width: 7.8rem;
+        }
+      }
+    }
+
+    &__number {
+      font-weight: 600;
+      color: #555;
+    }
+
+    &__percentage {
+      &--1 {
+        width: 16rem;
+        height: 16rem;
+        fill: none;
+        stroke: url(#GradientColor); /* This is taken from <svg> element */
+        stroke-width: 2rem;
+        stroke-dasharray: 450; /* This number will create COMPLETE-CIRCLE. We Can play with this number to see the magic */
+        stroke-dashoffset: 450; /* It will make a part of the circle HIDDEN/TRANSPERANT. This property will help to animate this gradient color with JS */
+        animation: animPie1 2s linear forwards;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        //MEDIA QUERY
+        @include respond(tab-land) {
+          // stroke-width: 2.4rem;
+          // top: 44%;
+          // left: 44%;
+          // transform: translate(-50%, -50%);
+          display: none; //IMPORTANT: This display is temporary. I need to fix it in the future
+        }
+      }
+      &--2 {
+        width: 16rem;
+        height: 16rem;
+        fill: none;
+        stroke: url(#GradientColor); /* This is taken from <svg> element */
+        stroke-width: 2rem;
+        stroke-dasharray: 450; /* This number will create COMPLETE-CIRCLE. We Can play with this number to see the magic */
+        stroke-dashoffset: 450; /* It will make a part of the circle HIDDEN/TRANSPERANT. This property will help to animate this gradient color with JS */
+        animation: animPie2 2s linear forwards;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  // BAR-LINE-DESIGN
+  &-bar {
+    & h4 {
+      margin-left: 1rem;
+    }
+
+    &__number {
+      font-weight: 200;
+    }
+
+    &__progress {
+      height: 2.5vw;
+      background: var(--grey-2);
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      overflow: hidden; //It will hide the inline-color over GREY-WHITE
+
+      &--sub {
+        height: 100%;
+        background: var(--royalred-main);
+      }
+    }
+  }
+}

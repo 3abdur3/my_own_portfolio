@@ -1,0 +1,25 @@
+// ABSTRACTS
+@import 'abstract/variables';
+@import 'abstract/mixins';
+
+// BASE
+@import 'base/base';
+@import 'base/typography';
+@import 'base/animations';
+@import 'base/utility';
+
+// COMPONENTS
+@import 'components/buttons';
+@import 'components/wave';
+@import 'components/navigation';
+@import 'components/dialogue-box';
+// @import 'components/darkMode';
+
+// LAYOUTS
+@import 'layouts/header';
+@import 'layouts/about';
+@import 'layouts/timeline';
+@import 'layouts/skill';
+@import 'layouts/projects';
+@import 'layouts/cta';
+@import 'layouts/footer';

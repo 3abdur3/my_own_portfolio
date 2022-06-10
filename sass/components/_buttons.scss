@@ -1,0 +1,170 @@
+// ******* CTA BUTTON ******
+.btn {
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 300;
+    background: linear-gradient(to right, var(--blue-light), var(--blue-dark));
+    color: var(--white-2);
+    position: relative;
+    overflow: hidden; //otherwise, CTA BUTTON would be visible above another one
+  }
+
+  &__visible {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 2rem 7.5rem;
+    transition: all 0.2s;
+  }
+
+  &__invisible {
+    // We want to set this <span> element on top of the other one
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 3rem 0;
+
+    position: absolute;
+    top: -100%; // -100% means, exactly the size of the element
+    left: 0;
+    transition: all 0.2s;
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+    //It will take the element(SEND) 100% at the bottom to make place for 2nd element
+  }
+  &:hover &__invisible {
+    top: 0; //Because it is now on top -100% without 'hover',
+  }
+}
+
+// *****BUTTON FROM cssButton.io(For Header) ******
+.button {
+  &,
+  &:active,
+  &:visited {
+    display: inline-block;
+    // width: 35%;
+    margin-top: 5rem;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    background: linear-gradient(to right, var(--blue-light), var(--blue-dark));
+    color: var(--white-2);
+    position: relative;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    top: -1rem;
+    left: -1rem;
+    border-top: 4px solid var(--blue-light);
+    border-left: 4px solid var(--blue-light);
+    transition: 0.5s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    bottom: -1rem;
+    right: -1rem;
+    border-bottom: 4px solid var(--blue-light);
+    border-right: 4px solid var(--blue-light);
+    transition: 0.5s;
+  }
+
+  &:hover::before {
+    width: 100%;
+    height: 100%;
+  }
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ******* ABOUT BUTTON ******
+.about-btn {
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    // width: 100%;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 300;
+    background: linear-gradient(to right, var(--blue-light), var(--blue-dark));
+    color: var(--white-2);
+    position: relative;
+    transition: all 0.2s ease-out;
+  }
+
+  &:hover,
+  &:active {
+    // transform: translateY(-1rem);
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+  }
+  &--icon {
+    transform: translateY(0.5rem); //Otherwise, this icon hangs a bit up
+    width: 2rem;
+    height: 2rem;
+    fill: var(--white-2);
+  }
+  @include respond(small-phone-fix) {
+    // width: 2rem;
+    // height: 2rem;
+  }
+}
+
+// ******* TAB BUTTON (In ABOUT section) ******
+.btn-container {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.tab-btn {
+  padding: 1rem 0;
+  border: none;
+  text-transform: capitalize;
+  font-size: 1rem;
+  display: block;
+  background: var(--blue-light);
+  cursor: pointer;
+  transition: all 0.3s linear;
+  letter-spacing: 0.25rem;
+
+  &.active {
+    background: #f4f4f4;
+    color: #000;
+  }
+
+  &:hover:not(.active) {
+    background: var(--blue-dark);
+    color: #f4f4f4;
+  }
+  &:nth-child(1) {
+    border-top-left-radius: 0.5rem;
+  }
+  &:nth-child(3) {
+    border-top-right-radius: 0.5rem;
+  }
+}

@@ -1,0 +1,56 @@
+.section-about {
+  padding: 8rem 5rem;
+  background: linear-gradient(to right, rgba(#c2233d, 0.8), rgba(#074955, 0.8));
+  color: var(--white-2);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+
+  @include respond(small-phone-fix) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about {
+  background: #fff;
+  color: #074955;
+  border-radius: 0.5rem;
+
+  &__img {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(#074955, 0.2),
+        rgba(#c2233d, 0.2)
+      ),
+      url(../img/aboutBG.jpg);
+    background-size: cover;
+
+    @include respond(small-phone-fix) {
+      background: none;
+    }
+
+    &--1 {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+      width: 100%;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; //from 9elements.github.io
+    }
+  }
+
+  &__content {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+// ****Hide TAB-content
+.content {
+  display: none; //With JS we gonna make it as BLOCK element
+
+  &.active {
+    display: block; //
+  }
+}

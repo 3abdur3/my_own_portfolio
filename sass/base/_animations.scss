@@ -1,0 +1,24 @@
+//  ****PIE-CHART-ANIMATION*****
+@keyframes animPie1 {
+  100% {
+    stroke-dashoffset: 22.5;
+    /* (stroke-dashoffset - stroke-dashoffset * 95%)= (450 - 450) * 0.95 = 22.5; */
+  }
+}
+
+@keyframes animPie2 {
+  100% {
+    stroke-dashoffset: 157.5;
+    /* (stroke-dashoffset - stroke-dashoffset * 65%)= (450 - 450) * 0.65 = 157.5; */
+  }
+}
+
+// ****FOOTER POINTER MOVEMENT****
+@keyframes handMove {
+  from {
+    bottom: 1rem; //This line is probably not necessary
+  }
+  to {
+    top: -1.2rem;
+  }
+}

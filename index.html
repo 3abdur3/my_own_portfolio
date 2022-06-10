@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Abdur Rahman" />
+
+    <!-- FAVICON(For DESKTOP 64by64) **?v-2 updates automatic faviconicon without deleting browser catch -->
+    <link rel="icon" type="image/png" href="img/favicon/fav_desktop.png?v=2" />
+    <!-- FAVICON(For IOS/iPHONE 180by180) -->
+    <link rel="apple-touch-icon" href="img/favicon/apple_touch_icon.png" />
+    <!-- FAVICON(For Android 192by192 and 512by512, BUT WE need to create a file-extention named "manifest.webmanifest" for ANDROID) -->
+    <link rel="manifest" href="manifest.webmanifest" />
+
+    <!-- Google-Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JS -->
+    <script defer src="js/script.js"></script>
+
+    <title>Portfoli &mdash; Abdur Rahman</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header header-bubble">
+        <!-- MENUBAR -->
+        <div class="navigation">
+          <nav class="navigation__nav">
+            <ul class="navigation__nav-list">
+              <li><a href="#about" class="navigation__nav-link">About</a></li>
+              <li>
+                <a href="#contact" class="navigation__nav-link"> Contact </a>
+              </li>
+              <li>
+                <a href="#experience" class="navigation__nav-link">
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a href="#projects" class="navigation__nav-link"> Projects </a>
+              </li>
+              <li>
+                <a href="#skills" class="navigation__nav-link"> Skills </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header__content">
+          <h1 class="header__content--title">
+            I'm Abdur
+            <span class="tertiary"> RAHMAN </span>
+          </h1>
+
+          <p class="header__content--text">
+            A
+            <span class="tertiary">passionate</span>
+            web developer
+          </p>
+
+          <div class="header__button">
+            <a href="#" class="button button--header thanks_show"> Click me </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Thank you note -->
+      <div class="thanks hidden">
+        <button class="thanks_close">&times;</button>
+        <h1 class="thanks_text">🙏 for your time!!</h1>
+        <img class="thanks_img" src="img/thanks.jpg" alt="Thank you photo" />
+      </div>
+      <div class="overlay hidden"></div>
+
+      <main>
+        <!-- ABOUT SECTION -->
+        <section class="section-about" id="about">
+          <div class="about__img">
+            <img src="img/myPhoto.webp" alt="MyPhoto" class="about__img--1" />
+          </div>
+
+          <article class="about">
+            <!-- btn container -->
+            <div class="btn-container">
+              <buttton class="tab-btn active" data-id="about me">
+                About
+              </buttton>
+              <buttton class="tab-btn" data-id="vision">Vision</buttton>
+              <buttton class="tab-btn" data-id="goals">Goals</buttton>
+            </div>
+            <article class="about__content">
+              <!-- For 1st item -->
+              <div class="content active" id="about me">
+                <h4>About me</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Temporibus illo consectetur odit. Vel quidem cupiditate
+                  itaque. provident molestias deserunt incidunt.
+                </p>
+              </div>
+
+              <!-- For 2nd item -->
+              <div class="content" id="vision">
+                <h4>Vision</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                  molestias suscipit sit placeat provident earum nulla incidunt
+                  dicta nihil maiores eveniet officiis.
+                </p>
+              </div>
+
+              <!-- For 3rd item -->
+              <div class="content" id="goals">
+                <h4>Goals</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Temporibus illo consectetur odit. Vel quidem cupiditate
+                  itaque. provident molestias deserunt incidunt.
+                </p>
+              </div>
+            </article>
+          </article>
+          <a href="resume.pdf" target="_blank" class="about-btn">
+            Resume &nbsp;
+            <svg class="about-btn--icon">
+              <use xlink:href="img/sprite.svg#icon-cloud-download"></use>
+            </svg>
+          </a>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section class="section-timeline" id="experience">
+          <div class="heading--primary">
+            <h2 class="heading--text">Experienced with</h2>
+            <div class="bottom-line--1"></div>
+          </div>
+          <ul class="timeline">
+            <li class="timeline__list">
+              <div class="timeline__content">
+                <h3 class="timeline__title">
+                  Lorem ipsum dolor sit amet consectetur dulpa error.
+                </h3>
+                <p class="timeline__text">
+                  Lorem ipsum dolor sit adipisicing elit. Tempore iure neque
+                  Iure nisi dolore esse architecto! Modi architecto
+                  exercitationem voluptatibus.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__list">
+              <div class="timeline__content">
+                <h3 class="timeline__title">
+                  Lorem ipsum dolor sit amet adipisicing dulpa error.
+                </h3>
+                <p class="timeline__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tempore iure neque architecto! exercitationem voluptatibus.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__list">
+              <div class="timeline__content">
+                <h3 class="timeline__title">
+                  Lorem ipsum dolor sit amet adipisicing dulpa error.
+                </h3>
+                <p class="timeline__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tempore iure neque architecto! Modi architecto exercitationem
+                  voluptatibus.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__list">
+              <div class="timeline__content">
+                <h3 class="timeline__title">
+                  Lorem ipsum dolor sit amet adipisicing dulpa error.
+                </h3>
+                <p class="timeline__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tempore iure neque Iure architecto! Modi architecto
+                  exercitationem voluptatibus.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- SECTION-SKILLS -->
+        <section class="section-skills" id="skills">
+          <div class="heading--primary">
+            <h2 class="heading--text">Skills to offer</h2>
+            <div class="bottom-line--2"></div>
+          </div>
+
+          <div class="skill__box">
+            <!-- PIE-CHARTS -->
+            <div class="skill-pie">
+              <div class="skill-pie__box">
+                <div class="skill-pie__circle">
+                  <div class="skill-pie__circle--outer">
+                    <div class="skill-pie__circle--inner">
+                      <div id="skill-pie__number--1">95%</div>
+                    </div>
+                  </div>
+                  <h5>FrontEnd</h5>
+
+                  <!-- To create gradient color -->
+                  <svg
+                    class="skill-pie__percentage--1"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#9b1c31" />
+                        <stop offset="100%" stop-color="black" />
+                      </linearGradient>
+                    </defs>
+                    <circle
+                      class="circle"
+                      cx="79px"
+                      cy="79px"
+                      r="60px"
+                      stroke-linecap="round"
+                    />
+                    <circle class="small" />
+                    <circle class="medium" />
+                    <circle class="large" />
+                  </svg>
+                </div>
+              </div>
+              <div class="skill-pie__box">
+                <div class="skill-pie__circle">
+                  <div class="skill-pie__circle--outer">
+                    <div class="skill-pie__circle--inner">
+                      <div id="skill-pie__number--2">65%</div>
+                    </div>
+                  </div>
+                  <h5>BackEnd</h5>
+
+                  <svg
+                    class="skill-pie__percentage--2"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="gold" />
+                        <stop offset="100%" stop-color="red" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="79" cy="79" r="60" stroke-linecap="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- LINE-CHART -->
+            <div class="skill-bar">
+              <div class="">
+                <h4>
+                  HTML & CSS |
+                  <span class="skill-bar__number">95%</span>
+                </h4>
+                <div class="skill-bar__progress">
+                  <div
+                    class="skill-bar__progress--sub"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+              <div class="">
+                <h4>
+                  SASS |
+                  <span class="skill-bar__number">85%</span>
+                </h4>
+                <div class="skill-bar__progress">
+                  <div
+                    class="skill-bar__progress--sub"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+              <div class="">
+                <h4>
+                  JS |
+                  <span class="skill-bar__number">60%</span>
+                </h4>
+                <div class="skill-bar__progress">
+                  <div
+                    class="skill-bar__progress--sub"
+                    style="width: 60%"
+                  ></div>
+                </div>
+              </div>
+              <div class="">
+                <h4>
+                  Python |
+                  <span class="skill-bar__number">50%</span>
+                </h4>
+                <div class="skill-bar__progress">
+                  <div
+                    class="skill-bar__progress--sub"
+                    style="width: 50%"
+                  ></div>
+                </div>
+              </div>
+              <div class="">
+                <h4>
+                  Django |
+                  <span class="skill-bar__number">65%</span>
+                </h4>
+                <div class="skill-bar__progress">
+                  <div
+                    class="skill-bar__progress--sub"
+                    style="width: 65%"
+                  ></div>
+                </div>
+              </div>
+              <div class="">
+                <h4>
+                  UI & UX |
+                  <span class="skill-bar__number">80%</span>
+                </h4>
+                <div class="skill-bar__progress">
+                  <div
+                    class="skill-bar__progress--sub"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION-PROJECTS -->
+        <section class="section-project" id="projects">
+          <div class="heading--primary">
+            <h2 class="heading--text">Some of my projects</h2>
+            <div class="bottom-line--2"></div>
+          </div>
+
+          <div class="project">
+            <div class="project__box">
+              <div class="project__image">
+                <img
+                  src="img/work/img1.jpg"
+                  alt=""
+                  class="project__image--img"
+                />
+              </div>
+              <div class="project__text">
+                <p class="project__text--main">Design</p>
+                <h2 class="project__text--sub">Quality design</h2>
+              </div>
+            </div>
+            <div class="project__box">
+              <div class="project__image">
+                <img
+                  src="img/work/img2.jpg"
+                  alt=""
+                  class="project__image--img"
+                />
+              </div>
+              <div class="project__text">
+                <p class="project__text--main">UX</p>
+                <h2 class="project__text--sub">User friendly</h2>
+              </div>
+            </div>
+            <div class="project__box">
+              <div class="project__image">
+                <img
+                  src="img/work/img3.jpg"
+                  alt=""
+                  class="project__image--img"
+                />
+              </div>
+              <div class="project__text">
+                <p class="project__text--main">Dance</p>
+                <h2 class="project__text--sub">Learn dancing</h2>
+              </div>
+            </div>
+            <div class="project__box">
+              <div class="project__image">
+                <img
+                  src="img/work/img4.jpg"
+                  alt=""
+                  class="project__image--img"
+                />
+              </div>
+              <div class="project__text">
+                <p class="project__text--main">Game</p>
+                <h2 class="project__text--sub">Guess number</h2>
+              </div>
+            </div>
+            <div class="project__box">
+              <div class="project__image">
+                <img
+                  src="img/work/img5.jpg"
+                  alt=""
+                  class="project__image--img"
+                />
+              </div>
+              <div class="project__text">
+                <p class="project__text--main">Life</p>
+                <h2 class="project__text--sub">Beauty of life</h2>
+              </div>
+            </div>
+            <div class="project__box">
+              <div class="project__image">
+                <img
+                  src="img/work/img6.jpg"
+                  alt=""
+                  class="project__image--img"
+                />
+              </div>
+              <div class="project__text">
+                <p class="project__text--main">Portrait</p>
+                <h2 class="project__text--sub">Truth of life</h2>
+              </div>
+            </div>
+            <div class="project__box">
+              <div class="project__image">
+                <img
+                  src="img/work/img7.jpg"
+                  alt=""
+                  class="project__image--img"
+                />
+              </div>
+              <div class="project__text">
+                <p class="project__text--main">Model</p>
+                <h2 class="project__text--sub">Give a try</h2>
+              </div>
+            </div>
+            <div class="project__box">
+              <div class="project__image">
+                <img
+                  src="img/work/img8.jpg"
+                  alt=""
+                  class="project__image--img"
+                />
+              </div>
+              <div class="project__text">
+                <p class="project__text--main">Colour</p>
+                <h2 class="project__text--sub">Beyond evrything</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION-CTA -->
+        <section class="section-cta" id="contact">
+          <div class="heading--primary">
+            <h2 class="heading--text">
+              Get in touch
+              <!-- <span class="text-wrap">Shoot here</span> -->
+            </h2>
+            <div class="bottom-line--1"></div>
+          </div>
+
+          <!-- Spam filters detect unsolicited, unwanted, and virus-infected 
+          email (called spam) and stop it from getting into email inboxes. 
+          Internet Service Providers (ISPs) use spam filters to make sure 
+          they aren't distributing spam. -->
+          <form method="POST" class="cta__form">
+            <div class="cta__field">
+              <input
+                class="cta__input cta__field--name"
+                type="text"
+                name="name"
+                placeholder="Name"
+              />
+              <input
+                class="cta__input cta__field--subject"
+                type="text"
+                name="subject"
+                placeholder="Subject"
+              />
+              <input
+                class="cta__input cta__field--email"
+                type="email"
+                name="email"
+                placeholder="Email Address"
+              />
+              <input
+                class="cta__input cta__field--phone"
+                type="text"
+                name="phone"
+                placeholder="Phone No. (optional)"
+              />
+              <textarea
+                class="cta__input cta__field--message"
+                type="message"
+                name="message"
+                placeholder="Enter Message"
+              ></textarea>
+
+              <button type="button" name="button" class="btn cta__button">
+                <span class="btn__visible">Send</span>
+                <span class="btn__invisible">Reply you soon 👍</span>
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <!-- SECTION-FOOTER -->
+      <footer class="section-footer footer-bubble">
+        <svg class="footer__icon">
+          <use xlink:href="img/sprite.svg#icon-angle-double-up"></use>
+        </svg>
+
+        <div class="footer__main">
+          <div class="footer__logo">
+            <img
+              src="img/logo.png"
+              alt="Footer Logo"
+              class="footer__logo--img"
+            />
+          </div>
+          <ul class="footer__side">
+            <li><a href="" class="footer__side--link">Privacy</a></li>
+            <li><a href="" class="footer__side--link">Contact</a></li>
+            <li><a href="" class="footer__side--link">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__sub">
+          <p class="footer__sub--text">
+            Copyright &copy;
+            <span class="year">2022</span>
+            by Shupol | All Rights Reserved.
+          </p>
+          <ul class="footer__social">
+            <li>
+              <a href="" class="footer__social--link">
+                <svg class="footer__social--icon">
+                  <use xlink:href="img/sprite.svg#icon-linkedin-square"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="" class="footer__social--link">
+                <svg class="footer__social--icon">
+                  <use xlink:href="img/sprite.svg#icon-github-square"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="" class="footer__social--link">
+                <svg class="footer__social--icon">
+                  <use xlink:href="img/sprite.svg#icon-facebook-square"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

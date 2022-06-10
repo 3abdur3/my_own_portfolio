@@ -1,0 +1,94 @@
+.section-cta {
+  padding: 10rem 5rem 8rem 5rem;
+  background-image: linear-gradient(to bottom, #101d2c, #ab0c26);
+  color: var(--white-2);
+  // overflow: hidden;
+}
+
+.cta {
+  &__form {
+    width: 70%;
+    margin: 0 auto;
+    border-bottom: 3px solid transparent;
+
+    @include respond(normal-phone) {
+      width: 80%;
+    }
+    @include respond(small-phone) {
+      width: 100%;
+    }
+
+    & *:focus {
+      outline: none;
+      border-bottom: 3px solid orangered;
+    }
+  }
+
+  &__field {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 5rem;
+
+    @include respond(small-phone) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--name {
+      grid-column: 1 / 1;
+
+      // @include respond(small-phone) {
+      //   grid-column: 1 / -1;
+      // }
+    }
+    &--subject {
+      grid-column: 2 / -1;
+
+      // @include respond(small-phone) {
+      //   grid-column: 1 / -1;
+      // }
+    }
+    &--mail {
+      grid-column: 1 / 1;
+
+      // @include respond(small-phone) {
+      //   grid-column: 1 / -1;
+      // }
+    }
+    &--phone {
+      grid-column: 2 / -1;
+
+      // @include respond(small-phone) {
+      //   grid-column: 1 / -1;
+      // }
+    }
+    &--message {
+      grid-column: 1 / -1;
+      height: 15rem;
+
+      // @include respond(small-phone) {
+      //   grid-column: 1 / -1;
+      // }
+    }
+  }
+
+  &__input {
+    padding: 1.2rem;
+    border: none; //Important here when we want hover-efect only bottom(just onesided)
+    display: block;
+    box-shadow: 0 2px 3px rgba(#555, 0.15);
+    border-bottom: 3px solid transparent;
+    // This is important for :focus or :active. Otherwise input box moves a bit
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  &__button {
+    grid-column: 2 / -1;
+    // width: 60%;
+    // border-bottom: 3px solid transparent;
+  }
+}

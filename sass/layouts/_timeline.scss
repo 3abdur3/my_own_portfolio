@@ -1,0 +1,162 @@
+.section-timeline {
+  padding: 5rem 0 12rem 0;
+  background: var(--dark-2);
+  // background: var(--royalred-main);
+  color: var(--grey-1);
+}
+
+.timeline {
+  //TO CREATE LINE
+  &__list {
+    padding-top: 5rem;
+    width: 0.6rem;
+    /* This 'width' will create a vertical-line middle of the page. 
+    ***NOTE: The boxes will come from two sides which are actully <div>*/
+    background: var(--blue-dark);
+    /*It will bring everything in the middle (fOR  small screen, with media-query
+    we can  plpace either margin left or margin right*/
+    margin: 0 auto;
+    position: relative;
+
+    @include respond(small-phone-fix) {
+      margin-left: 8rem;
+    }
+
+    //TO CREATE DOTS ON THE BAR-LINE
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 25px;
+      height: 25px;
+      background: var(--royalred-light);
+      border-radius: 50%;
+      // transition: background 0.5s ease-in-out;
+
+      @include respond(normal-phone) {
+        top: 45%;
+        left: 45%; /* Means, 50% of the line(result:3px, because our line width 6px) */
+        width: 3rem;
+        height: 3rem;
+      }
+      @include respond(normal-phone-fix) {
+        top: 43%;
+        left: 43%;
+      }
+      @include respond(normal-phone-fix) {
+        top: 41%;
+        left: 41%; /* Means, 50% of the line(result:3px, because our line width 6px) */
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+
+  //TO CREATE BOX
+  &__content {
+    width: 45rem;
+    padding: 2rem;
+    background: var(--royalred-light);
+    position: relative;
+    transition: all 1.5s ease-in-out;
+
+    /* We use js to show it when it scroled */
+    visibility: hidden;
+    opacity: 0;
+
+    //MEDIA-QUERY
+    @include respond(tab-land-fix) {
+      // width: calc(100vw - 7rem);
+      width: 38rem;
+    }
+    @include respond(normal-phone) {
+      width: 32rem;
+    }
+    @include respond(normal-phone-fix) {
+      width: 27rem;
+    }
+    @include respond(small-phone) {
+      width: 30vw;
+    }
+    @include respond(small-phone-fix) {
+      width: 50vw;
+    }
+
+    /* TO CREATE 'ARROW' FOR BOXES */
+    &::before {
+      content: "";
+      height: 2.5rem;
+      width: 2.5rem;
+      position: absolute;
+      top: 25%;
+      // background: #fff;
+      background: var(--royalred-light);
+      transform: rotate(45deg);
+    }
+  }
+
+  /* For right-side-of-the-lINE(we target child 'div' of li). It has to be
+  written this way. We cannot put it inside "&__content" */
+  &__list:nth-child(odd) &__content {
+    left: 4rem; // From position:relative
+
+    /* For js animation */
+    // transform: translateX(20rem);
+
+    &::before {
+      left: -1.2rem; /* It will place the 'arrow' */
+    }
+  }
+
+  // For the left side boxes
+  &__list:nth-child(even) &__content {
+    left: -48.4rem;
+
+    /* For js animation */
+    // transform: translateX(-20rem);
+
+    //MEDIA-QUERY
+    @include respond(tab-land-fix) {
+      left: -41.4rem;
+    }
+    @include respond(normal-phone) {
+      left: -35.4rem;
+    }
+    @include respond(normal-phone-fix) {
+      left: -30.4rem;
+    }
+    @include respond(small-phone) {
+      left: -23.4rem;
+    }
+    @include respond(small-phone-fix) {
+      left: 3.8rem;
+    }
+
+    &::before {
+      right: -1.2rem; //To place the arrow
+
+      @include respond(small-phone-fix) {
+        left: -1.2rem;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    line-height: 1.2;
+  }
+}
+
+// // This "SHOW" class will be added with JS
+.show .timeline__content {
+  transform: none; /* Because we put initially 'transform:translateX(200/-200)' */
+  visibility: visible;
+  opacity: 1;
+}

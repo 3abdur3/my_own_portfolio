@@ -1,0 +1,114 @@
+.section-project {
+  padding: 8rem 5rem 12rem 5rem;
+  background: var(--white-2);
+}
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 1.5rem;
+  // box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+
+  @include respond(normal-phone-fix) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+  @include respond(small-phone) {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+
+  &__box {
+    position: relative;
+    background: var(--royalred-light); // This color will applied with OVERLAY
+    overflow: hidden; //Otherwise, OVERLAY will be hanging on the top of image
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+
+    // we gonna use an OVERLAY
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: inherit;
+      width: 100%; //100% of its parent(project__box) size
+      height: 100%;
+      opacity: 0.9;
+      transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+      transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    // Main 'overlay' effect here
+    &:hover::after {
+      transform: scale(2) translateX(0) translateY(0) rotate(-28deg);
+    }
+
+    // SCALE image with hover
+    &:hover .project__image {
+      transform: scale(1.2);
+    }
+
+    // Bring in Text on hover
+    &:hover .project__text {
+      opacity: 1;
+      // because we gonna set opacity to '0' by default
+      transform: translateY(0);
+
+      @include respond(small-phone) {
+        transform: translateY(-15%);
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    transition: all 750ms cubic-bezier(0.2, 1, 0.3, 1);
+
+    &--img {
+      display: block;
+      width: 100%; // Because we keep the image inside the container(not-outside)
+    }
+  }
+
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    z-index: 1;
+    transform: translateY(-30%);
+
+    transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1),
+      transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    transition-delay: 500ms;
+    // For a nice finishing touch in HOVER-EFFECT. Experimnet with this number to see the difference
+
+    @include respond(normal-phone-fix) {
+      transform: translateY(-40%);
+      font-size: 85%;
+    }
+
+    &--main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      width: 100%; //Otherwise, it will wrap 'every'word
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      opacity: 0.7;
+    }
+
+    &--sub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      width: 100%; //Otherwise, it will wrap 'every'word
+      margin-top: 1rem;
+    }
+  }
+}

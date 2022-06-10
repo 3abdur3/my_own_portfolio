@@ -1,0 +1,112 @@
+.section-footer {
+  padding: 10rem 5rem 5rem 5rem;
+  position: relative;
+  background-image: linear-gradient(to top, #101d2c, #ab0c26);
+  z-index: 2;
+}
+
+.footer {
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    fill: var(--blue-light);
+    background: var(--blue-dark);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -5%);
+    transition: all 0.2s ease-out;
+
+    &:hover,
+    &:active {
+      // transform: translate(-0.7rem, -0.7rem);
+      animation: handMove 0.6s linear infinite;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5rem;
+
+    @include respond(small-phone-fix) {
+      gap: 1rem;
+      display: grid;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    &--img {
+      width: 8rem;
+
+      @include respond(small-phone) {
+        width: 6rem;
+      }
+    }
+  }
+
+  &__side {
+    display: flex;
+    align-items: center;
+
+    &--link:link,
+    &--link:visited {
+      display: block; // <a> has to be "display:bloc" to 'hover' it later
+      text-transform: uppercase;
+      padding: 1.5rem;
+      font-size: 1.4rem;
+      color: var(--grey-1);
+    }
+
+    &--link:hover,
+    &--link:active {
+      background: rgba(#c2233d, 0.5);
+    }
+  }
+
+  &__sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+
+    &--text {
+      background: #aaa;
+      font-size: 1.3rem;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-self: flex-end;
+    gap: 1rem;
+    margin-top: 0.5rem;
+
+    &--link:link,
+    &--link:visited {
+      display: block;
+    }
+
+    &--icon {
+      height: 3.5rem;
+      width: 3.5rem;
+      fill: var(--royalred-main);
+      transition: all 0.3s;
+
+      &:hover,
+      &:active {
+        fill: var(--royalred-light);
+        transform: translateY(5px);
+      }
+    }
+  }
+}

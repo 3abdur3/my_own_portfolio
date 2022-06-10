@@ -1,0 +1,79 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  // overscroll-behavior: contain;
+
+  // MEDIA-QUERY
+  // NOTE: Big screen first should be used in media-query, then small
+  @include respond(tab-land) {
+    font-size: 56.25%; // It means, 1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-land-fix) {
+    font-size: 50%; // It means, 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(tab-port-fix) {
+    font-size: 43.75%; // It means, 1rem = 7px, 7.5/16 = 43.75%
+  }
+
+  @include respond(normal-phone) {
+    font-size: 40.63%; // It means, 1rem = 6.5px, 6.5/16 = 40.63%
+  }
+
+  @include respond(big-desktop) {
+    // width 1800px>
+    font-size: 75%; // It means, 1rem = 12px, 12/16 = 43.75%
+  }
+}
+
+body {
+  line-height: 1.6;
+  font-size: 1.6rem;
+  color: var(--dark-2);
+  padding: 2.5rem;
+
+  @include respond(normal-phone-fix) {
+    padding: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* We gonna use different font family JUST for header */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // color: var(--mainText);
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+}
+
+/* Another font family for these ELEMENTS */
+p,
+li,
+span,
+input,
+button,
+textarea {
+  // color: var(--secondaryText);
+  font-family: 'Dosis', sans-serif;
+}
