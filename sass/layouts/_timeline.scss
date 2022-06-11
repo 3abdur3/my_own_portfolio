@@ -78,7 +78,7 @@
       width: 27rem;
     }
     @include respond(small-phone) {
-      width: 30vw;
+      width: 20rem;
     }
     @include respond(small-phone-fix) {
       width: 50vw;
@@ -91,13 +91,22 @@
       width: 2.5rem;
       position: absolute;
       top: 25%;
-      // background: #fff;
       background: var(--royalred-light);
       transform: rotate(45deg);
+
+      @include respond(normal-phone-fix) {
+        top: 20%;
+      }
+      @include respond(small-phone) {
+        top: 23%;
+      }
+      @include respond(small-phone-fix) {
+        top: 21.5%;
+      }
     }
   }
 
-  /* For right-side-of-the-lINE(we target child 'div' of li). It has to be
+  /* Arrow for right-side-of-the-lINE(we target child 'div' of li). It has to be
   written this way. We cannot put it inside "&__content" */
   &__list:nth-child(odd) &__content {
     left: 4rem; // From position:relative
@@ -110,7 +119,7 @@
     }
   }
 
-  // For the left side boxes
+  // Box for the left side
   &__list:nth-child(even) &__content {
     left: -48.4rem;
 
